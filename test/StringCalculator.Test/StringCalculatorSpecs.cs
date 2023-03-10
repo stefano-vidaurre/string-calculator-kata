@@ -23,29 +23,13 @@ public class StringCalculatorSpecs
         result.Should().Be(expectedResult);
     }
     
-    // TODO: Comprobar casos con dos numeros: "4,5", "6,7", "8,9"
-
-    [Test]
-    public void ShouldReturnNineWhenInputAreFourAndFive()
+    [TestCase("4,5", 9)]
+    [TestCase("6,7", 13)]
+    [TestCase("8,9", 17)]
+    public void ShouldReturnTheSumWhenInputAreTwoNumbers(string numbers, int expectedResult)
     {
-        int result = Program.Add("4,5");
+        int result = Program.Add(numbers);
         
-        result.Should().Be(9);
-    }
-    
-    [Test]
-    public void ShouldReturnThirteenWhenInputAreSixAndSeven()
-    {
-        int result = Program.Add("6,7");
-        
-        result.Should().Be(13);
-    }
-    
-    [Test]
-    public void ShouldReturnSeventeenWhenInputAreEightAndNine()
-    {
-        int result = Program.Add("8,9");
-        
-        result.Should().Be(17);
+        result.Should().Be(expectedResult);
     }
 }
