@@ -32,4 +32,12 @@ public class StringCalculatorSpecs
         
         result.Should().Be(9);
     }
+    
+    [Test]
+    public void ShouldReturnThirtyWhenInputIsSixAndSeven()
+    {
+        int result = Program.Add("6,7");
+        
+        result.Should().Be(13);
+    }
 }
