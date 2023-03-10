@@ -42,10 +42,10 @@ public class StringCalculatorSpecs
     }
     
     [Test]
-    public void ShouldReturnSixteenWhenInputAreEightAndNine()
+    public void ShouldReturnSeventeenWhenInputAreEightAndNine()
     {
         int result = Program.Add("8,9");
         
-        result.Should().Be(16);
+        result.Should().Be(17);
     }
 }
