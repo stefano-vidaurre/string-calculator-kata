@@ -52,7 +52,7 @@ public class StringCalculatorSpecs
     [Test]
     public void ShouldReturnTheSumWhenSeparatorIsAt()
     {
-        int result = Program.Add("//@\n2@3");
-        result.Should().Be(5);
+        int result = Program.Add("//@\n4@5");
+        result.Should().Be(9);
     }
 }
