@@ -16,22 +16,8 @@ public static class Program
             return 0;
         }
 
-        if (numbers == "4,5")
-        {
-            return 9;
-        }
-
-        if (numbers == "6,7")
-        {
-            return 13;
-        }
-        
-        if (numbers == "8,9")
-        {
-            return 17;
-        }
-
-        return int.Parse(numbers);
+        string[] numberList = numbers.Split(',');
+        return numberList.Sum(int.Parse);
     }
 }
 
