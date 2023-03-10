@@ -26,10 +26,17 @@ public class StringCalculatorSpecs
     [TestCase("4,5", 9)]
     [TestCase("10,20,30", 60)]
     [TestCase("10,20,30,40", 100)]
-    public void ShouldReturnTheSumWhenInputAreTwoOrMoreNumbers(string numbers, int expectedResult)
+    public void ShouldReturnTheSumWhenInputAreIsOrMoreNumbers(string numbers, int expectedResult)
     {
         int result = Program.Add(numbers);
         
         result.Should().Be(expectedResult);
+    }
+
+    [Test]
+    public void ShouldReturnTheSumWhenInputIsTwoOrMoreNumbersUsingComaAndCr()
+    {
+        int result = Program.Add("10,20\n30\n40");
+        result.Should().Be(100);
     }
 }
