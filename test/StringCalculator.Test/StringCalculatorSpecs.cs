@@ -46,6 +46,6 @@ public class StringCalculatorSpecs
     public void ShouldReturnTheSumWhenSeparatorIsSemicolon()
     {
         int result = Program.Add("//;\n2;3");
-        result.Should().Be(3);
+        result.Should().Be(5);
     }
 }
