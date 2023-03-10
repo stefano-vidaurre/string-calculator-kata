@@ -13,31 +13,14 @@ public class StringCalculatorSpecs
         result.Should().Be(0);
     }
     
-    // TODO: Comprobar casos con un solo numero: 1, 2, 3
-    
-    [Test]
-    public void ShouldReturnOneWhenInputIsOne()
+    [TestCase("1", 1)]
+    [TestCase("2", 2)]
+    [TestCase("3", 3)]
+    public void ShouldReturnParsedNumberForOnlyOneNumber(string number, int expectedResult)
     {
-        int result = Program.Add("1");
+        int result = Program.Add(number);
         
-        result.Should().Be(1);
+        result.Should().Be(expectedResult);
     }
-    
-    [Test]
-    public void ShouldReturnTwoWhenInputIsTwo()
-    {
-        int result = Program.Add("2");
-        
-        result.Should().Be(2);
-    }
-    
-    [Test]
-    public void ShouldReturnThreeWhenInputIsThree()
-    {
-        int result = Program.Add("3");
-        
-        result.Should().Be(3);
-    }
-    
     // TODO: Comprobar casos con dos numeros: "4,5", "6,7", "8,9"
 }
