@@ -31,5 +31,13 @@ public class StringCalculatorSpecs
         result.Should().Be(2);
     }
     
+    [Test]
+    public void ShouldReturnThreeWhenInputIsThree()
+    {
+        int result = Program.Add("3");
+        
+        result.Should().Be(3);
+    }
+    
     // TODO: Comprobar casos con dos numeros: "4,5", "6,7", "8,9"
 }
