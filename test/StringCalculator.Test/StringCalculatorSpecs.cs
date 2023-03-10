@@ -39,4 +39,13 @@ public class StringCalculatorSpecs
         int result = Program.Add("10,20\n30\n40");
         result.Should().Be(100);
     }
+    
+    // TODO: Usar separadores diferentes: ';', '@', '+'
+
+    [Test]
+    public void ShouldReturnTheSumWhenSeparatorIsSemicolon()
+    {
+        int result = Program.Add("//;\n2;3");
+        result.Should().Be(3);
+    }
 }
