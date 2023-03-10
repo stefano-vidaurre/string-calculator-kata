@@ -24,26 +24,12 @@ public class StringCalculatorSpecs
     }
     
     [TestCase("4,5", 9)]
-    [TestCase("6,7", 13)]
-    [TestCase("8,9", 17)]
-    public void ShouldReturnTheSumWhenInputAreTwoNumbers(string numbers, int expectedResult)
+    [TestCase("10,20,30", 60)]
+    [TestCase("10,20,30,40", 100)]
+    public void ShouldReturnTheSumWhenInputAreTwoOrMoreNumbers(string numbers, int expectedResult)
     {
         int result = Program.Add(numbers);
         
         result.Should().Be(expectedResult);
-    }
-    
-    [Test]
-    public void ShouldReturnTheSumWhenInputAreThreeNumbers()
-    {
-        int result = Program.Add("10,20,30");
-        result.Should().Be(60);
-    }
-    
-    [Test]
-    public void ShouldReturnTheSumWhenInputAreFourNumbers()
-    {
-        int result = Program.Add("10,20,30,40");
-        result.Should().Be(100);
     }
 }
