@@ -55,4 +55,11 @@ public class StringCalculatorSpecs
         Action act = () => Program.Add("-3,4");
         act.Should().Throw<ArgumentException>();
     }
+
+    [Test]
+    public void ShouldBeContainedInTheExceptionMessageTheListOfNegativeNumbers()
+    {
+        Action act = () => Program.Add("-4,-6");
+        act.Should().Throw<ArgumentException>().WithMessage("negatives not allowed: -4, -6");
+    }
 }
