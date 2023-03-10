@@ -40,26 +40,12 @@ public class StringCalculatorSpecs
         result.Should().Be(100);
     }
     
-    // TODO: Usar separadores diferentes: ';', '@', '+'
-
-    [Test]
-    public void ShouldReturnTheSumWhenSeparatorIsSemicolon()
+    [TestCase("//;\n2;3", 5)]
+    [TestCase("//@\n4@5", 9)]
+    [TestCase("//+\n10+11", 21)]
+    public void ShouldReturnTheSumWhenSeparatorIsOther(string numbers, int expectedResult)
     {
-        int result = Program.Add("//;\n2;3");
-        result.Should().Be(5);
-    }
-
-    [Test]
-    public void ShouldReturnTheSumWhenSeparatorIsAt()
-    {
-        int result = Program.Add("//@\n4@5");
-        result.Should().Be(9);
-    }
-    
-    [Test]
-    public void ShouldReturnTheSumWhenSeparatorIsPlus()
-    {
-        int result = Program.Add("//+\n10+11");
-        result.Should().Be(21);
+        int result = Program.Add(numbers);
+        result.Should().Be(expectedResult);
     }
 }

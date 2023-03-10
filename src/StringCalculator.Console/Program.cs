@@ -20,8 +20,8 @@ public static class Program
 
         if (numbers.StartsWith("//"))
         {
-            separator = new char[]{numbers[2]};
-            numbers = numbers.Substring(4);
+            separator = new char[]{ numbers[2] };
+            numbers = numbers[4..];
         }
 
         string[] numberList = numbers.Split(separator);
