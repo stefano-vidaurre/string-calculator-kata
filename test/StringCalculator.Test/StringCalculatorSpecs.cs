@@ -55,4 +55,11 @@ public class StringCalculatorSpecs
         int result = Program.Add("//@\n4@5");
         result.Should().Be(9);
     }
+    
+    [Test]
+    public void ShouldReturnTheSumWhenSeparatorIsPlus()
+    {
+        int result = Program.Add("//+\n10+11");
+        result.Should().Be(21);
+    }
 }
