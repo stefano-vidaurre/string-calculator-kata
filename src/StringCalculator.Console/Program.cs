@@ -11,28 +11,20 @@ public static class Program
 
     public static int Add(string numbers)
     {
+        char[] separator = {',', '\n'};
+        
         if (string.IsNullOrEmpty(numbers))
         {
             return 0;
         }
 
-        if (numbers == "//;\n2;3")
+        if (numbers.StartsWith("//"))
         {
-            return 5;
-        }
-        
-        if (numbers == "//@\n4@5")
-        {
-            return 9;
-        }
-        
-        
-        if (numbers == "//+\n10+11")
-        {
-            return 21;
+            separator = new char[]{numbers[2]};
+            numbers = numbers.Substring(4);
         }
 
-        string[] numberList = numbers.Split(',', '\n');
+        string[] numberList = numbers.Split(separator);
         return numberList.Sum(int.Parse);
     }
 }
