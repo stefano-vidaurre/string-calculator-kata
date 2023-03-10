@@ -48,4 +48,11 @@ public class StringCalculatorSpecs
         int result = Program.Add(numbers);
         result.Should().Be(expectedResult);
     }
+
+    [Test]
+    public void ShouldThrowAExceptionIfInputContainsANegativeNumber()
+    {
+        Action act = () => Program.Add("-3,4");
+        act.Should().Throw<ArgumentException>().WithMessage("negatives not allowed -3");
+    }
 }
