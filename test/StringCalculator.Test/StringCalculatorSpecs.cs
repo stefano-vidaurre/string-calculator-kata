@@ -26,7 +26,7 @@ public class StringCalculatorSpecs
     // TODO: Comprobar casos con dos numeros: "4,5", "6,7", "8,9"
 
     [Test]
-    public void ShouldReturnNineWhenInputIsFourAndFive()
+    public void ShouldReturnNineWhenInputAreFourAndFive()
     {
         int result = Program.Add("4,5");
         
@@ -34,10 +34,18 @@ public class StringCalculatorSpecs
     }
     
     [Test]
-    public void ShouldReturnThirtyWhenInputIsSixAndSeven()
+    public void ShouldReturnThirteenWhenInputAreSixAndSeven()
     {
         int result = Program.Add("6,7");
         
         result.Should().Be(13);
+    }
+    
+    [Test]
+    public void ShouldReturnSixteenWhenInputAreEightAndNine()
+    {
+        int result = Program.Add("8,9");
+        
+        result.Should().Be(16);
     }
 }
