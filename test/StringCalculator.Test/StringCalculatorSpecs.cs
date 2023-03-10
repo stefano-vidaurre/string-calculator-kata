@@ -48,4 +48,11 @@ public class StringCalculatorSpecs
         int result = Program.Add("//;\n2;3");
         result.Should().Be(5);
     }
+
+    [Test]
+    public void ShouldReturnTheSumWhenSeparatorIsAt()
+    {
+        int result = Program.Add("//@\n2@3");
+        result.Should().Be(5);
+    }
 }
