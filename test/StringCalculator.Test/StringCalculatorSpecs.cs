@@ -32,10 +32,18 @@ public class StringCalculatorSpecs
         
         result.Should().Be(expectedResult);
     }
-
+    
+    [Test]
     public void ShouldReturnTheSumWhenInputAreThreeNumbers()
     {
         int result = Program.Add("10,20,30");
         result.Should().Be(60);
+    }
+    
+    [Test]
+    public void ShouldReturnTheSumWhenInputAreFourNumbers()
+    {
+        int result = Program.Add("10,20,30,40");
+        result.Should().Be(100);
     }
 }
