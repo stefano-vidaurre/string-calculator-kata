@@ -11,22 +11,12 @@ public static class Program
 
     public static int Add(string numbers)
     {
-        if (numbers == "1")
+        if (string.IsNullOrEmpty(numbers))
         {
-            return 1;
+            return 0;
         }
 
-        if (numbers == "2")
-        {
-            return 2;
-        }
-        
-        if (numbers == "3")
-        {
-            return 3;
-        }
-        
-        return 0;
+        return int.Parse(numbers);
     }
 }
 
