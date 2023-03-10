@@ -25,7 +25,14 @@ public static class Program
         }
 
         string[] numberList = numbers.Split(separator);
-        return numberList.Sum(int.Parse);
+        int[] parsedNumbers = numberList.Select(int.Parse).ToArray();
+
+        if (parsedNumbers.Any(int.IsNegative))
+        {
+            throw new ArgumentException();
+        }
+        
+        return parsedNumbers.Sum();
     }
 }
 
