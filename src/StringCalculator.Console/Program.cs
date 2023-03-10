@@ -16,7 +16,7 @@ public static class Program
             return 0;
         }
 
-        string[] numberList = numbers.Split(',');
+        string[] numberList = numbers.Split(',', '\n');
         return numberList.Sum(int.Parse);
     }
 }
