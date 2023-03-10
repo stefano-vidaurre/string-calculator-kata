@@ -1,4 +1,6 @@
-﻿namespace StringCalculator.Console;
+﻿using System.Text;
+
+namespace StringCalculator.Console;
 
 using System;
 
@@ -26,10 +28,16 @@ public static class Program
 
         string[] numberList = numbers.Split(separator);
         int[] parsedNumbers = numberList.Select(int.Parse).ToArray();
-
-        if (parsedNumbers.Any(int.IsNegative))
+        int[] negativeNumbers = parsedNumbers.Where(int.IsNegative).ToArray();
+        
+        if (negativeNumbers.Any())
         {
-            throw new ArgumentException();
+            StringBuilder builder = new StringBuilder();
+            foreach (int negativeNumber in negativeNumbers)
+            {
+                builder.Append($" {negativeNumber}");
+            }
+            throw new ArgumentException($"negatives not allowed:{builder}");
         }
         
         return parsedNumbers.Sum();
