@@ -66,7 +66,7 @@ public class Tests
     [Test]
     public void SumTheNumbersThreeAndTwoWhenInputContainsASemicolonSeparator()
     {
-        int result = _stringCalculator.Add("//;\n3,2");
+        int result = _stringCalculator.Add("//;\n3;2");
         Assert.That(result, Is.EqualTo(5));
     }
 }
