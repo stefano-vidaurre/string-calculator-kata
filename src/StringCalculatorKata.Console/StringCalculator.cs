@@ -32,7 +32,8 @@ public class StringCalculator
             IEnumerable<int> negatives = numbersParsed.Where(int.IsNegative);
             throw new ArgumentException(negatives.Aggregate("negatives not allowed: ", (acc, next) => acc += $"{next} "));
         }
-        return numbersParsed.Sum();
+        
+        return numbersParsed.Where(number => number <= 1000).Sum();
     }
 
     private static IEnumerable<int> ParseNumbers(string numbers, char[] separators)
