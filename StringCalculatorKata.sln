@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Info", "00 - Info", "{C1373C6B-21B8-4B8F-BCC8-354E6A79E3B9}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Console", "01 - Console", "{37CAC874-653C-4B6B-A5D6-47B777AEB960}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Tests", "02 - Tests", "{739C2226-5F3F-4468-8AD2-524E22CB2B1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculatorKata.Console", "src\StringCalculatorKata.Console\StringCalculatorKata.Console.csproj", "{15C6463C-D3D2-471D-BC43-C3FF1D9ABFBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalculatorKata.Test", "test\StringCalculatorKata.Test\StringCalculatorKata.Test.csproj", "{4D8FB198-2417-4838-945A-E08AB65756CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15C6463C-D3D2-471D-BC43-C3FF1D9ABFBF} = {37CAC874-653C-4B6B-A5D6-47B777AEB960}
+		{4D8FB198-2417-4838-945A-E08AB65756CE} = {739C2226-5F3F-4468-8AD2-524E22CB2B1D}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15C6463C-D3D2-471D-BC43-C3FF1D9ABFBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C6463C-D3D2-471D-BC43-C3FF1D9ABFBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C6463C-D3D2-471D-BC43-C3FF1D9ABFBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C6463C-D3D2-471D-BC43-C3FF1D9ABFBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D8FB198-2417-4838-945A-E08AB65756CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D8FB198-2417-4838-945A-E08AB65756CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D8FB198-2417-4838-945A-E08AB65756CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D8FB198-2417-4838-945A-E08AB65756CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
