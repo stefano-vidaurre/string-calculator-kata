@@ -76,4 +76,11 @@ public class Tests
         TestDelegate action = () => _stringCalculator.Add("3,-2");
         Assert.Throws<ArgumentException>(action, "negatives not allowed: -2");
     }
+
+    [Test]
+    public void IgnoreTheNumbersGreaterThan1000()
+    {
+        int result = _stringCalculator.Add("2,1001");
+        Assert.That(result, Is.EqualTo(2));
+    }
 }
