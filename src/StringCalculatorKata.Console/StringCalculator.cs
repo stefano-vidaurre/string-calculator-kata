@@ -24,12 +24,6 @@ public class StringCalculator
         return SumNumbersParsed(ParseNumbers(numbers, separators));
     }
 
-    private static int SumWithCustomSeparator(string numbers, char[] separators)
-    {
-        separators = GetCustomSeparators(numbers, separators);
-        return SumNumbersParsed(ParseNumbers(numbers[4..], separators));
-    }
-
     private static int SumNumbersParsed(IEnumerable<int> numbersParsed)
     {
         if (numbersParsed.Any(int.IsNegative))
@@ -41,6 +35,12 @@ public class StringCalculator
         return numbersParsed.Where(number => number <= 1000).Sum();
     }
 
+    private static int SumWithCustomSeparator(string numbers, char[] separators)
+    {
+        char[] customSeparators = GetCustomSeparators(numbers, separators);
+        return SumNumbersParsed(ParseNumbers(numbers[4..], customSeparators));
+    }
+    
     private static IEnumerable<int> ParseNumbers(string numbers, char[] separators)
     {
         return numbers.Split(separators)
@@ -49,8 +49,7 @@ public class StringCalculator
 
     private static char[] GetCustomSeparators(string numbers, char[] separators)
     {
-        separators = separators.Append(numbers[2]).ToArray();
-        return separators;
+        return separators.Append(numbers[2]).ToArray();
     }
 
     private static bool HasCustomSeparator(string numbers)
