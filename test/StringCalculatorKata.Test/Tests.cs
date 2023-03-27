@@ -34,16 +34,25 @@ public class Tests
     }
     
     [Test]
-    public void ReturnFourWhenInputIsThreeComaOne()
+    public void ReturnFourWhenInputIsThreeCommaOne()
     {
         int result = _stringCalculator.Add("3,1");
         Assert.That(result, Is.EqualTo(4));
     }
     
     [Test]
-    public void ReturnFiveWhenInputIsThreeComaTwo()
+    public void ReturnFiveWhenInputIsThreeCommaTwo()
     {
         int result = _stringCalculator.Add("3,2");
         Assert.That(result, Is.EqualTo(5));
+    }
+
+    [TestCase("2,3,4", 9)]
+    [TestCase("2,3,4,5", 14)]
+    [TestCase("2,3,4,5,6", 20)]
+    public void ReturnTheSumOfNumbersWhenInputIsAComaSeparatedValuesList(string numbers, int resultExpected)
+    {
+        int result = _stringCalculator.Add(numbers);
+        Assert.That(result, Is.EqualTo(resultExpected));
     }
 }
