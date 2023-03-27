@@ -55,4 +55,11 @@ public class Tests
         int result = _stringCalculator.Add(numbers);
         Assert.That(result, Is.EqualTo(resultExpected));
     }
+    
+    [Test]
+    public void SumTheValuesWhenInputContainsCR()
+    {
+        int result = _stringCalculator.Add("3,2\n3");
+        Assert.That(result, Is.EqualTo(8));
+    }
 }
