@@ -19,4 +19,12 @@ public class Tests
         int result = stringCalculator.Add("1");
         Assert.That(result, Is.EqualTo(1));
     }
+
+    [Test]
+    public void ReturnTwoWhenInputIsTwo()
+    {
+        StringCalculator stringCalculator = new StringCalculator();
+        int result = stringCalculator.Add("2");
+        Assert.That(result, Is.EqualTo(2));
+    }
 }
