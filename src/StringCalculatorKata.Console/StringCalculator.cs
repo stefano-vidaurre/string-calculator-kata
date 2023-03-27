@@ -9,7 +9,7 @@ public class StringCalculator
             return 0;
         }
 
-        return numbers.Split(',')
+        return numbers.Split(',', '\n')
             .Select(int.Parse)
             .Sum();
     }
