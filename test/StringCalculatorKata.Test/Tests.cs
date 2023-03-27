@@ -83,4 +83,11 @@ public class Tests
         int result = _stringCalculator.Add("2,1001");
         Assert.That(result, Is.EqualTo(2));
     }
+
+    [Test]
+    public void AcceptCustomSeparatorsOfAnySize()
+    {
+        int result = _stringCalculator.Add("//[***]\n1***2***3");
+        Assert.That(result, Is.EqualTo(6));
+    }
 }
