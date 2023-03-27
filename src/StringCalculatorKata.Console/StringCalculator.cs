@@ -11,11 +11,6 @@ public class StringCalculator
             return 0;
         }
 
-        if (numbers == "//[***]\n1***2***3")
-        {
-            return 6;
-        }
-        
         if (HasCustomSeparator(numbers))
         {
             return SumWithCustomSeparator(numbers, separators);
@@ -27,6 +22,7 @@ public class StringCalculator
     private static IEnumerable<int> ParseNumbers(string numbers, char[] separators)
     {
         return numbers.Split(separators)
+            .Where(s => !string.IsNullOrEmpty(s))
             .Select(int.Parse);
     }
 
@@ -50,7 +46,13 @@ public class StringCalculator
     
     private static char[] GetCustomSeparators(string numbers, char[] separators)
     {
-        return separators.Append(numbers[2]).ToArray();
+        int endAt = numbers.IndexOf('\n');
+        string separatorsString = numbers[2..endAt];
+        char[] separatorsList = separatorsString
+            .Split('[')
+            .Where(s => !string.IsNullOrEmpty(s))
+            .Select(s => s[0]).ToArray();
+        return separators.Concat(separatorsList).ToArray();
     }
     
     private static bool HasCustomSeparator(string numbers)
