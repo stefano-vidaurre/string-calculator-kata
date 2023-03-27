@@ -4,16 +4,11 @@ public class StringCalculator
 {
     public int Add(string numbers)
     {
-        if (numbers == "1")
+        if (string.IsNullOrWhiteSpace(numbers))
         {
-            return 1;
+            return 0;
         }
 
-        if (numbers == "2")
-        {
-            return 2;
-        }
-        
-        return 0;
+        return int.Parse(numbers);
     }
 }
