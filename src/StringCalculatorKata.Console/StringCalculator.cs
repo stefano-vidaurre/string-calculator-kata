@@ -23,6 +23,12 @@ public class StringCalculator
 
         return SumNumbersParsed(ParseNumbers(numbers, separators));
     }
+    
+    private static IEnumerable<int> ParseNumbers(string numbers, char[] separators)
+    {
+        return numbers.Split(separators)
+            .Select(int.Parse);
+    }
 
     private static int SumNumbersParsed(IEnumerable<int> numbersParsed)
     {
@@ -38,20 +44,15 @@ public class StringCalculator
     private static int SumWithCustomSeparator(string numbers, char[] separators)
     {
         char[] customSeparators = GetCustomSeparators(numbers, separators);
-        return SumNumbersParsed(ParseNumbers(numbers[4..], customSeparators));
+        int startAt = numbers.IndexOf('\n') + 1;
+        return SumNumbersParsed(ParseNumbers(numbers[startAt..], customSeparators));
     }
     
-    private static IEnumerable<int> ParseNumbers(string numbers, char[] separators)
-    {
-        return numbers.Split(separators)
-            .Select(int.Parse);
-    }
-
     private static char[] GetCustomSeparators(string numbers, char[] separators)
     {
         return separators.Append(numbers[2]).ToArray();
     }
-
+    
     private static bool HasCustomSeparator(string numbers)
     {
         return numbers.StartsWith("//");
