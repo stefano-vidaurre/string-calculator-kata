@@ -57,9 +57,16 @@ public class Tests
     }
     
     [Test]
-    public void SumTheValuesWhenInputContainsCR()
+    public void SumTheValuesWhenInputContainsCr()
     {
         int result = _stringCalculator.Add("3,2\n3");
         Assert.That(result, Is.EqualTo(8));
+    }
+
+    [Test]
+    public void SumTheNumbersThreeAndTwoWhenInputContainsASemicolonSeparator()
+    {
+        int result = _stringCalculator.Add("//;\n3,2");
+        Assert.That(result, Is.EqualTo(5));
     }
 }
