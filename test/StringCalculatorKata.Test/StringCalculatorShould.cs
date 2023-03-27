@@ -2,7 +2,7 @@ using StringCalculatorKata.Console;
 
 namespace StringCalculatorKata.Test;
 
-public class Tests
+public class StringCalculatorShould
 {
     private StringCalculator _stringCalculator;
 
@@ -88,6 +88,13 @@ public class Tests
     public void AcceptCustomSeparatorsOfAnySize()
     {
         int result = _stringCalculator.Add("//[***]\n1***2***3");
+        Assert.That(result, Is.EqualTo(6));
+    }
+    
+    [Test]
+    public void AcceptCustomSeparatorsOfAnySizeAndTwoDifferentSeparators()
+    {
+        int result = _stringCalculator.Add("//[***][;;;;;;]\n1***2;;;;;;3");
         Assert.That(result, Is.EqualTo(6));
     }
 }
