@@ -11,7 +11,7 @@ public class Tests
     {
         _stringCalculator = new StringCalculator();
     }
-    
+
     [Test]
     public void ReturnZeroWhenInputIsEmpty()
     {
@@ -31,5 +31,12 @@ public class Tests
     {
         int result = _stringCalculator.Add("2");
         Assert.That(result, Is.EqualTo(2));
+    }
+    
+    [Test]
+    public void ReturnFourWhenInputIsThreeComaOne()
+    {
+        int result = _stringCalculator.Add("3,1");
+        Assert.That(result, Is.EqualTo(4));
     }
 }
