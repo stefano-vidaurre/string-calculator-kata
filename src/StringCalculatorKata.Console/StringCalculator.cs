@@ -27,6 +27,11 @@ public class StringCalculator
 
     private static int SumNumbersParsed(IEnumerable<int> numbersParsed)
     {
+        if (numbersParsed.Any(int.IsNegative))
+        {
+            IEnumerable<int> negatives = numbersParsed.Where(int.IsNegative);
+            throw new ArgumentException(negatives.Aggregate("negatives not allowed: ", (acc, next) => acc += $"{next} "));
+        }
         return numbersParsed.Sum();
     }
 

@@ -74,6 +74,6 @@ public class Tests
     public void ReportAErrorWhenInputContainsANegativeNumber()
     {
         TestDelegate action = () => _stringCalculator.Add("3,-2");
-        Assert.Throws<ArgumentException>(action);
+        Assert.Throws<ArgumentException>(action, "negatives not allowed: -2");
     }
 }
