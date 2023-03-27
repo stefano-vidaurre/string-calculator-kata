@@ -4,27 +4,32 @@ namespace StringCalculatorKata.Test;
 
 public class Tests
 {
+    private StringCalculator _stringCalculator;
+
+    [SetUp]
+    public void SetUp()
+    {
+        _stringCalculator = new StringCalculator();
+    }
+    
     [Test]
     public void ReturnZeroWhenInputIsEmpty()
     {
-        StringCalculator stringCalculator = new StringCalculator();
-        int result = stringCalculator.Add("");
+        int result = _stringCalculator.Add("");
         Assert.That(result, Is.Zero);
     }
 
     [Test]
     public void ReturnOneWhenInputIsOne()
     {
-        StringCalculator stringCalculator = new StringCalculator();
-        int result = stringCalculator.Add("1");
+        int result = _stringCalculator.Add("1");
         Assert.That(result, Is.EqualTo(1));
     }
 
     [Test]
     public void ReturnTwoWhenInputIsTwo()
     {
-        StringCalculator stringCalculator = new StringCalculator();
-        int result = stringCalculator.Add("2");
+        int result = _stringCalculator.Add("2");
         Assert.That(result, Is.EqualTo(2));
     }
 }
