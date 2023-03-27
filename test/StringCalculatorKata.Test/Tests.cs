@@ -39,4 +39,11 @@ public class Tests
         int result = _stringCalculator.Add("3,1");
         Assert.That(result, Is.EqualTo(4));
     }
+    
+    [Test]
+    public void ReturnFiveWhenInputIsThreeComaTwo()
+    {
+        int result = _stringCalculator.Add("3,2");
+        Assert.That(result, Is.EqualTo(5));
+    }
 }
